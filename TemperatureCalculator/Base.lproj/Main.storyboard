@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,101 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Temperature Calculator" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fbu-h5-fKo">
+                                <rect key="frame" x="16" y="20" width="343" height="132"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="132" id="Hxp-RT-H6L"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IRo-Rq-yeu">
+                                <rect key="frame" x="16" y="198" width="343" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="lY5-7U-F8E"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <action selector="calculate:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="5Lv-sT-ePO"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Fahrenheit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIQ-c1-8DS">
+                                <rect key="frame" x="102" y="169" width="170" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="nKq-zk-WaL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="nfr-zY-GNp">
+                                <rect key="frame" x="16" y="619" width="343" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="5Tt-i3-P8F"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Calculate to C"/>
+                                    <segment title="Calculate to F"/>
+                                </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="switchConversion:" destination="BYZ-38-t0r" eventType="valueChanged" id="qP9-C6-UJ2"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tL-Iz-nkt">
+                                <rect key="frame" x="16" y="512" width="343" height="99"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="99" id="gJf-KH-beT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Temp1" translatesAutoresizingMaskIntoConstraints="NO" id="6tJ-cX-gvk">
+                                <rect key="frame" x="16" y="236" width="343" height="268"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="nfr-zY-GNp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1Ri-OU-bQN"/>
+                            <constraint firstItem="fbu-h5-fKo" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8Pp-c9-37B"/>
+                            <constraint firstItem="nfr-zY-GNp" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="91e-Ko-uV0"/>
+                            <constraint firstItem="1tL-Iz-nkt" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="A6k-UR-y0X"/>
+                            <constraint firstItem="6tJ-cX-gvk" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GMt-3v-0sT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="nfr-zY-GNp" secondAttribute="bottom" constant="20" id="GdF-eY-2aq"/>
+                            <constraint firstItem="IRo-Rq-yeu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Meq-M5-bxu"/>
+                            <constraint firstItem="cIQ-c1-8DS" firstAttribute="top" secondItem="fbu-h5-fKo" secondAttribute="bottom" constant="17" id="SUU-rw-uc8"/>
+                            <constraint firstItem="IRo-Rq-yeu" firstAttribute="top" secondItem="cIQ-c1-8DS" secondAttribute="bottom" constant="8" id="ULu-BW-tbe"/>
+                            <constraint firstItem="nfr-zY-GNp" firstAttribute="top" secondItem="1tL-Iz-nkt" secondAttribute="bottom" constant="8" id="a0T-U8-zZN"/>
+                            <constraint firstItem="1tL-Iz-nkt" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="eO1-jz-1Ls"/>
+                            <constraint firstItem="cIQ-c1-8DS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="86" id="hgU-pb-9bE"/>
+                            <constraint firstItem="fbu-h5-fKo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="hyT-2T-wby"/>
+                            <constraint firstItem="6tJ-cX-gvk" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="kCt-Ql-0nr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cIQ-c1-8DS" secondAttribute="trailing" constant="87" id="kRy-We-EMN"/>
+                            <constraint firstItem="1tL-Iz-nkt" firstAttribute="top" secondItem="6tJ-cX-gvk" secondAttribute="bottom" constant="8" id="kWg-nC-cTn"/>
+                            <constraint firstItem="fbu-h5-fKo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="n9h-Yp-Agi"/>
+                            <constraint firstItem="6tJ-cX-gvk" firstAttribute="top" secondItem="IRo-Rq-yeu" secondAttribute="bottom" constant="8" id="rn0-0Q-dSU"/>
+                            <constraint firstItem="IRo-Rq-yeu" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="t4j-hB-FDK"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="enterLabel" destination="cIQ-c1-8DS" id="BFy-v6-FB7"/>
+                        <outlet property="outputLabel" destination="1tL-Iz-nkt" id="DRY-S8-I5v"/>
+                        <outlet property="segControl" destination="nfr-zY-GNp" id="i3L-UU-1Cc"/>
+                        <outlet property="tempImage" destination="6tJ-cX-gvk" id="7hH-8N-huM"/>
+                        <outlet property="textField" destination="IRo-Rq-yeu" id="EYE-oB-MdA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Temp1" width="263" height="943"/>
+    </resources>
 </document>
